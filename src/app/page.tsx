@@ -78,7 +78,7 @@ export default function Home() {
           >
             Para quem busca algo mais criativo e <strong>underground</strong>,
             <br /> mantendo a essência da vibe que originou alguns movimentos na
-            época, antes de alcançar a cultura pop.
+            época, <br /> antes de alcançar a cultura pop.
           </Typography>
         </Box>
 

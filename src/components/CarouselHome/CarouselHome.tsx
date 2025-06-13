@@ -36,7 +36,7 @@ export default function CarouselHome() {
         <SwiperSlide key={index}>
           <Box
             sx={{
-              height: { xs: '300px', sm: '400px', md: '500px' },
+              height: { xs: '300px', sm: '300px', md: '400px' },
               backgroundImage: `url(${item.image})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
