@@ -38,7 +38,7 @@ export default function Home() {
           <MenuNav />
         </Box>
 
-        <Container maxWidth="lg">
+        <Container maxWidth="md">
           <CarouselHome />
         </Container>
 
@@ -54,7 +54,7 @@ export default function Home() {
             variant="h1"
             component="h1"
             sx={{
-              fontSize: { xs: '20px', sm: '40px', md: '60px' },
+              fontSize: { xs: '20px', sm: '40px', md: '50px' },
               fontWeight: 'bold',
               lineHeight: 1.2,
               mb: 2,
@@ -62,23 +62,23 @@ export default function Home() {
               textAlign: 'center',
             }}
           >
-            Produtora de evento e música
-            <br /> Alternativa
+            Produtora de Eventos e <br />
+            Música Alternativa
           </Typography>
           <Typography
             variant="body1"
             component="p"
             sx={{
-              fontSize: { xs: '14px', sm: '20px', md: '28px' },
+              fontSize: { xs: '14px', sm: '18px', md: '22px' },
               width: { xs: '300px', sm: '600px', md: '900px' },
               mb: 2,
               color: 'white',
               textAlign: 'center',
             }}
           >
-            Para quem busca algo mais criativo e <strong>Underground</strong>,
-            <br /> mantendo a essência da vibe que originou alguns movimentos em
-            sua época, antes de alcançar a cultura pop.
+            Para quem busca algo mais criativo e <strong>underground</strong>,
+            <br /> mantendo a essência da vibe que originou alguns movimentos na
+            época, antes de alcançar a cultura pop.
           </Typography>
         </Box>
 
@@ -86,7 +86,7 @@ export default function Home() {
           <Button
             variant="contained"
             sx={{
-              fontSize: { xs: '12px', sm: '16px', md: '24px' },
+              fontSize: { xs: '12px', sm: '14px', md: '20px' },
               backgroundColor: 'tomato',
               borderRadius: '10px',
               mb: 5,

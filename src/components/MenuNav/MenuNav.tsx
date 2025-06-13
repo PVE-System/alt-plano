@@ -18,7 +18,7 @@ export default function MenuNav() {
       <Toolbar sx={{ justifyContent: 'center', gap: 1 }}>
         <Button
           sx={{
-            fontSize: { xs: '10px', sm: '16px' },
+            fontSize: { xs: '10px', sm: '14px' },
             '&:hover': {
               backgroundColor: '#666',
             },
@@ -26,11 +26,11 @@ export default function MenuNav() {
           color="inherit"
           href="/"
         >
-          <HomeRoundedIcon sx={{ fontSize: { xs: '20px', sm: '32px' } }} />
+          <HomeRoundedIcon sx={{ fontSize: { xs: '16px', sm: '28px' } }} />
         </Button>
         <Button
           sx={{
-            fontSize: { xs: '10px', sm: '16px' },
+            fontSize: { xs: '10px', sm: '14px' },
             whiteSpace: 'nowrap',
             '&:hover': {
               backgroundColor: '#666',
@@ -44,7 +44,7 @@ export default function MenuNav() {
 
         <Button
           sx={{
-            fontSize: { xs: '10px', sm: '16px' },
+            fontSize: { xs: '10px', sm: '14px' },
             '&:hover': {
               backgroundColor: '#666',
             },
@@ -56,7 +56,7 @@ export default function MenuNav() {
         </Button>
         <Button
           sx={{
-            fontSize: { xs: '10px', sm: '16px' },
+            fontSize: { xs: '10px', sm: '14px' },
             '&:hover': {
               backgroundColor: '#666',
             },
