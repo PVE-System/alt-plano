@@ -3,39 +3,94 @@
 import * as React from 'react';
 import {
   Box,
-  Card,
+  /*   Card,
   CardActionArea,
   CardMedia,
-  CardContent,
+  CardContent, */
   Typography,
   Container,
-  Button,
+  Fade,
 } from '@mui/material';
 
 import MenuNav from '@/components/MenuNav/MenuNav';
 import Footer from '@/components/Footer/Footer';
 import CarouselHome from '@/components/CarouselHome/CarouselHome';
 
+import HeadphonesIcon from '@mui/icons-material/Headphones';
+import LogoAltPlanoEffect from '@/components/LogoAltPlanoEffect/LogoAltPlanoEffect';
+/* import SpeakerIcon from '@mui/icons-material/Speaker';
+import MusicNoteIcon from '@mui/icons-material/MusicNote';
+import EqualizerIcon from '@mui/icons-material/Equalizer'; */
+
 export default function Home() {
+  const [currentIndex, setCurrentIndex] = React.useState(0);
+
+  const words = React.useMemo(
+    () => [
+      'Techno',
+      'Rave',
+      'Hip Hop',
+      'House',
+      'Sound System',
+      "Drum'n'bass",
+      'Hardcore',
+      'Punk',
+      'Skate',
+      'ALTPLANO',
+    ],
+    [],
+  );
+
+  React.useEffect(() => {
+    const interval = setInterval(
+      () => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % words.length);
+      },
+      words[currentIndex] === 'ALTPLANO' ? 6000 : 3000,
+    );
+
+    return () => clearInterval(interval);
+  }, [currentIndex, words]);
+
   return (
     <Box>
       <Box
         sx={{
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center',
-          background: 'linear-gradient(#1a1a2e, #16213e, #0f3460)',
+          alignItems: 'center' /*Transições + suaves 1*/,
+          /* background: 'linear-gradient(#4a4a4a, #2b2b2b, #181818)', */
+          /* background: 'linear-gradient(#1a1a2e, #16213e, #0f3460)', */
+          /* background: 'linear-gradient(#4a4a4a, #3c3c3c, #2b2b2b, #1f1f1f, #181818)', */
+          /*Inverso: fundo escuro com brilho no topo 1 */
+          /* background: 'linear-gradient(to top, #181818, #2b2b2b, #4a4a4a)', */
+          /*2 da direita para esquerda escuro e laterais mais claras (efeito "sombras nas bordas") */
+          background: {
+            xs: 'linear-gradient(to bottom, #181818, #242424, #2b2b2b)',
+            md: 'linear-gradient(to right, #181818, #2b2b2b 40%, #2b2b2b 60%, #4a4a4a)',
+          },
         }}
       >
         <Box
           sx={{
-            width: 'fit-content',
+            /* width: 'fit-content', */
             maxWidth: '90%',
-            overflow: 'hidden',
+            /*   overflow: 'hidden', */
             mb: 4,
           }}
         >
           <MenuNav />
+        </Box>
+
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            mb: 4,
+          }}
+        >
+          <LogoAltPlanoEffect />
         </Box>
 
         <Container maxWidth="md">
@@ -46,7 +101,7 @@ export default function Home() {
           sx={{
             display: 'flex',
             flexDirection: 'column',
-            mt: 10,
+            mt: 5,
             mb: 10,
           }}
         >
@@ -62,41 +117,115 @@ export default function Home() {
               textAlign: 'center',
             }}
           >
-            Produtora de Eventos e <br />
-            Música Alternativa
+            Produção Cultural Alternativa
           </Typography>
           <Typography
             variant="body1"
             component="p"
             sx={{
-              fontSize: { xs: '14px', sm: '18px', md: '22px' },
+              fontSize: { xs: '12px', sm: '18px', md: '22px' },
               width: { xs: '300px', sm: '600px', md: '900px' },
+
+              color: 'white',
+              textAlign: 'center',
+            }}
+          >
+            Criamos ambientes através da seleção musical.
+          </Typography>
+        </Box>
+
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            mb: 4,
+          }}
+        >
+          <Typography
+            variant="h1"
+            component="h1"
+            sx={{
+              fontSize: { xs: '14px', sm: '18px', md: '22px' },
+              fontWeight: 'bold',
+              lineHeight: 1.2,
               mb: 2,
               color: 'white',
               textAlign: 'center',
             }}
           >
-            Para quem busca algo mais criativo e <strong>underground</strong>,
-            <br /> mantendo a essência da vibe que originou alguns movimentos na
-            época, <br /> antes de alcançar a cultura pop.
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 1,
+              }}
+            >
+              <HeadphonesIcon fontSize="large" sx={{ color: '#842bc3ff' }} />
+              Culturas que nos identificamos
+              <HeadphonesIcon fontSize="large" sx={{ color: '#842bc3ff' }} />
+            </Box>
           </Typography>
+
+          <Box
+            component="img"
+            src="/images/AltPlano_espiral_bg_black_site.png"
+            alt="Alt Plano Logo"
+            sx={{
+              width: { xs: '100px', sm: '100px', md: '200px' },
+              animation: 'rotate 10s linear infinite',
+              filter: 'drop-shadow(0 0 10px rgba(0, 0, 0, 0.9))',
+              '@keyframes rotate': {
+                '0%': {
+                  transform: 'rotate(0deg)',
+                },
+                '100%': {
+                  transform: 'rotate(360deg)',
+                },
+              },
+            }}
+          />
+          <Box
+            sx={{
+              height: '40px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              mt: 2,
+            }}
+          >
+            <Fade in={true} timeout={1000}>
+              <Typography
+                variant="h5"
+                sx={{
+                  color: 'white',
+                  fontFamily: 'var(--font-electrolize)',
+                  textAlign: 'center',
+                  fontSize: { xs: '1.2rem', sm: '1.5rem', md: '2rem' },
+                }}
+              >
+                {words[currentIndex]}
+              </Typography>
+            </Fade>
+          </Box>
         </Box>
 
-        <Box sx={{ mb: 2 }}>
+        {/*         <Box sx={{ mb: 2 }}>
           <Button
             variant="contained"
             sx={{
               fontSize: { xs: '12px', sm: '14px', md: '20px' },
-              backgroundColor: 'tomato',
+              backgroundColor: '#842bc3ff',
               borderRadius: '10px',
               mb: 5,
               fontWeight: 'bold',
             }}
           >
-            Culturas que nos identificamos
+            Saiba mais sobre nós
           </Button>
-        </Box>
-        <Box
+        </Box> */}
+        {/*  <Box
           sx={{
             display: 'flex',
             flexDirection: { xs: 'column', sm: 'row' },
@@ -170,8 +299,7 @@ export default function Home() {
             gap: 6,
             mb: 6,
             width: '100%',
-            justifyContent: 'center',
-            /* padding: { xs: 2, sm: 4, md: 8 }, */
+            justifyContent: 'center',           
           }}
         >
           <Card sx={{ maxWidth: { xs: '300px', sm: '345px' } }}>
@@ -228,7 +356,7 @@ export default function Home() {
               </CardContent>
             </CardActionArea>
           </Card>
-        </Box>
+        </Box> */}
       </Box>
       <Footer />
     </Box>

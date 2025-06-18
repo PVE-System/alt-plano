@@ -3,15 +3,14 @@
 import { Box, Divider, Typography } from '@mui/material';
 /* import InstagramIcon from '@mui/icons-material/Instagram'; */
 
-export default function Footer() {
+export default function FooterContact() {
   return (
     <Box
       component="footer"
       sx={{
         width: '100vw',
         background: {
-          xs: 'linear-gradient(to bottom, #2b2b2b, #2b2b2b, #242424)',
-          md: 'linear-gradient(to right, #181818, #2b2b2b 40%, #2b2b2b 60%, #4a4a4a)',
+          xs: 'linear-gradient(to bottom, #1b1b1b, #1b1b1b, #2b2b2b)',
         },
         color: 'white',
         py: 1,
