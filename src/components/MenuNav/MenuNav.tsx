@@ -46,6 +46,7 @@ export default function MenuNav() {
         <Button
           sx={{
             fontSize: { xs: '10px', sm: '14px' },
+            fontFamily: 'electrolize',
             whiteSpace: 'nowrap',
             borderRadius: '12px',
             '&:hover': {
@@ -63,6 +64,7 @@ export default function MenuNav() {
         <Button
           sx={{
             fontSize: { xs: '10px', sm: '14px' },
+            fontFamily: 'electrolize',
             borderRadius: '12px',
             '&:hover': {
               backgroundColor: '#777',
@@ -78,6 +80,7 @@ export default function MenuNav() {
         <Button
           sx={{
             fontSize: { xs: '10px', sm: '14px' },
+            fontFamily: 'electrolize',
             borderRadius: '12px',
             '&:hover': {
               backgroundColor: '#777',

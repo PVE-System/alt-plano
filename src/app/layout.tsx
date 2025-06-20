@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'ALTPLANO',
-  description: 'Produtora de eventos e música alternativa',
+  description: 'Produção Cultural Alternativa',
   icons: {
     icon: [
       {

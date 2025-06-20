@@ -80,6 +80,7 @@ export default function AboutUs() {
             variant="body1"
             component="p"
             sx={{
+              fontFamily: 'Agency FB Cyrillic', //Font AltPlano
               fontSize: { xs: '12px', sm: '16px', md: '20px' },
               width: { xs: '300px', sm: '600px', md: '900px' },
               color: 'white',
@@ -97,6 +98,7 @@ export default function AboutUs() {
             variant="body1"
             component="p"
             sx={{
+              fontFamily: 'Agency FB Cyrillic', //Font AltPlano
               fontSize: { xs: '12px', sm: '16px', md: '20px' },
               width: { xs: '300px', sm: '600px', md: '900px' },
               color: 'white',
@@ -106,7 +108,7 @@ export default function AboutUs() {
             Nosso desejo também é assessorar outros produtores na curadoria
             artística de seus projetos. Além disso, temos como objetivo
             contribuir com produções musicais autorais nas mais variadas formas.
-            Essa é a ALTPLANO, nosso plano alternativo..
+            Essa é a ALTPLANO, nosso plano alternativo.
           </Typography>
           <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
             <SpeakerIcon

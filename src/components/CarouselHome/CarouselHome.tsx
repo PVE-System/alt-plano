@@ -59,19 +59,19 @@ export default function CarouselHome() {
           },
         },
         '& .swiper-button-next, & .swiper-button-prev': {
-          color: '#842bc3',
+          color: '#5c5c5c',
           '&:hover': {
-            color: '#a64dff',
+            color: '#3a3a3a',
           },
         },
         '& .swiper-pagination-bullet': {
-          backgroundColor: '#842bc3',
+          backgroundColor: '#5c5c5c',
           '&:hover': {
-            backgroundColor: '#a64dff',
+            backgroundColor: '#3a3a3a',
           },
         },
         '& .swiper-pagination-bullet-active': {
-          backgroundColor: '#a64dff',
+          backgroundColor: '#5c5c5c',
         },
       }}
     >

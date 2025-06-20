@@ -7,7 +7,7 @@ export default function LogoAltPlanoEffect() {
       src="/images/AltPlano_logo_site.png"
       alt="Alt Plano Logo"
       sx={{
-        width: { xs: '100px', sm: '100px', md: '180px' },
+        width: { xs: '200px', sm: '200px', md: '280px' },
         filter: 'drop-shadow(0 0 10px rgba(132, 43, 195, 0.3))',
         transition: 'all 0.5s ease-in-out',
         animation:

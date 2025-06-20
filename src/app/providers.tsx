@@ -20,15 +20,6 @@ const theme = createTheme({
       fontFamily: 'var(--font-electrolize)',
     },
   },
-  /*   components: {
-    MuiButton: {
-      styleOverrides: {
-        root: {
-          fontFamily: 'var(--font-electrolize)', // Fonte específica para botões
-        },
-      },
-    },
-  }, */
 });
 
 export function Providers({ children }: { children: React.ReactNode }) {
