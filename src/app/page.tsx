@@ -45,7 +45,7 @@ export default function Home() {
       () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % words.length);
       },
-      words[currentIndex] === 'ALTPLANO' ? 4000 : 1500,
+      words[currentIndex] === 'ALTPLANO' ? 5000 : 1500,
     );
 
     return () => clearInterval(interval);
@@ -160,7 +160,7 @@ export default function Home() {
               mb: 8,
             }}
           >
-            Criamos ambientes através da seleção musical.
+            - Criamos ambientes através da seleção musical -
           </Typography>
 
           <Container maxWidth="md">
