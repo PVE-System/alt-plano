@@ -160,7 +160,7 @@ export default function Home() {
               mb: 8,
             }}
           >
-            - Criamos ambientes através da seleção musical -
+            - Moldamos ambientes através da seleção musical -
           </Typography>
 
           <Container maxWidth="md">
