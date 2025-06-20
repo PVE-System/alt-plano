@@ -48,10 +48,14 @@ export default function CarouselHome() {
       sx={{
         width: '100%',
         p: 2,
+        maxWidth: { xs: '100vw', sm: '100%' },
+        /*  boxSizing: 'border-box', */
         '& .swiper': {
           borderRadius: '20px',
           boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
           transition: 'all 0.8s ease-in-out',
+          /* width: '100%', */
+          /* minHeight: { xs: '260px', sm: '300px', md: '330px' }, */
           '&:hover': {
             boxShadow: '0 12px 48px rgba(0, 0, 0, 0.4)',
             transform: 'scale(1.05)',
@@ -59,19 +63,19 @@ export default function CarouselHome() {
           },
         },
         '& .swiper-button-next, & .swiper-button-prev': {
-          color: '#5c5c5c',
+          color: '#3a3a3a',
           '&:hover': {
-            color: '#3a3a3a',
+            color: '#5e5e5e',
           },
         },
         '& .swiper-pagination-bullet': {
-          backgroundColor: '#5c5c5c',
+          backgroundColor: '#3a3a3a',
           '&:hover': {
-            backgroundColor: '#3a3a3a',
+            backgroundColor: '#5e5e5e',
           },
         },
         '& .swiper-pagination-bullet-active': {
-          backgroundColor: '#5c5c5c',
+          backgroundColor: '#5e5e5e',
         },
       }}
     >
@@ -105,6 +109,9 @@ export default function CarouselHome() {
                 justifyContent: 'flex-end',
                 pb: 6,
                 cursor: 'default',
+                /* minWidth: 0, */
+                width: '100%',
+                /*  boxSizing: 'border-box', */
               }}
             >
               <Box

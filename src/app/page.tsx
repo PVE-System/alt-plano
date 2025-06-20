@@ -154,7 +154,7 @@ export default function Home() {
             component="p"
             sx={{
               fontSize: { xs: '12px', sm: '18px', md: '22px' },
-              width: { xs: '300px', sm: '600px', md: '900px' },
+
               color: 'white',
               textAlign: 'center',
               mb: 8,

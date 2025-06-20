@@ -8,14 +8,14 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'ALTPLANO',
   description: 'Produção Cultural Alternativa',
-  icons: {
+  /*   icons: {
     icon: [
       {
         url: '/images/AltPlano_espiral_bg_black_site.png',
         href: '/images/AltPlano_espiral_bg_black_site.png',
       },
     ],
-  },
+  }, */
 };
 
 export default function RootLayout({
@@ -30,7 +30,7 @@ export default function RootLayout({
         <link
           rel="icon"
           type="image/png"
-          href="/images/AltPlano_espiral_bg_black_site.png"
+          href="/images/AltPlano_espiral_favicon.png"
         />
       </head>
       <body className={inter.className} suppressHydrationWarning>
