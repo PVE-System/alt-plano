@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎵 ALTPLANO - Produção Cultural Alternativa
 
-## Getting Started
+🌐 [www.altplano.com.br](https://www.altplano.com.br)
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Sobre o Projeto
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**ALTPLANO** é uma página **front-end responsiva** desenvolvida para uma produtora musical alternativa.  
+Seu objetivo é apresentar a identidade da empresa com **design moderno** e com foco na **cultura alternativa**.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🧱 Tecnologias Utilizadas
 
-## Learn More
+- ⚛️ [**Next.js 14**] — framework React moderno
+- 🎨 [**Material UI (MUI)**] — componentes estilizados e acessíveis
+- ✉️ [**EmailJS**] — envio de emails via front-end (Free Tier)
+- ☁️ [**Vercel**] — hospedagem com CI/CD integrado
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📬 Funcionalidade: Contato
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Na seção **"Contato"**, visitantes podem preencher um formulário que envia diretamente um e-mail para a produtora, sem a necessidade de back-end.
 
-## Deploy on Vercel
+✔️ Feito com `EmailJS`
+✔️ Funcional no plano **free tier**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+© ALTPLANO – Todos os direitos reservados.

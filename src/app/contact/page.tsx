@@ -1,18 +1,48 @@
 'use client';
 
 import * as React from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, TextField, Button } from '@mui/material';
+import { useRef, useState } from 'react';
+import CircularProgress from '@mui/material/CircularProgress';
 
 import MenuNav from '@/components/MenuNav/MenuNav';
-
 import LogoAltPlanoEffect from '@/components/LogoAltPlanoEffect/LogoAltPlanoEffect';
+import FooterB from '@/components/FooterB/FooterB';
 
-import EmailIcon from '@mui/icons-material/Email';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import FooterContact from '@/components/FooterContact/FooterContact';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
+  const form = useRef<HTMLFormElement>(null);
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
+
+  const handleSendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    setSuccess(false);
+    setError(false);
+
+    if (!form.current) return;
+
+    emailjs
+      .sendForm(
+        'service_c47a0x5', // Substitua pelo seu service ID
+        'template_pmwllgw', // Substitua pelo seu template ID
+        form.current,
+        '0azq8lZpwFdvj5ITV', // Substitua pelo seu public key
+      )
+      .then(() => {
+        setLoading(false);
+        setSuccess(true);
+        form.current?.reset();
+      })
+      .catch(() => {
+        setLoading(false);
+        setError(true);
+      });
+  };
+
   return (
     <Box
       sx={{
@@ -23,12 +53,12 @@ export default function Contact() {
     >
       <Box
         sx={{
+          flex: 1,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          flex: 1,
           background: {
-            xs: 'linear-gradient(to top, #1b1b1b, #2b2b2b, #3d3d3d)',
+            xs: 'linear-gradient(to bottom, #2b2b2b, #2b2b2b, #242424)',
           },
         }}
       >
@@ -55,6 +85,7 @@ export default function Contact() {
           sx={{
             display: 'flex',
             flexDirection: 'column',
+            alignItems: 'center',
             mt: 10,
             mb: 5,
             backgroundColor: 'rgba(0, 0, 0, 0.3)',
@@ -67,7 +98,7 @@ export default function Contact() {
             variant="h1"
             component="h1"
             sx={{
-              fontSize: { xs: '14px', sm: '22px', md: '32px' },
+              fontSize: { xs: '14px', sm: '16px', md: '22px' },
               fontWeight: 'bold',
               lineHeight: 1.2,
               mb: 2,
@@ -75,92 +106,143 @@ export default function Contact() {
               textAlign: 'center',
             }}
           >
-            Contato:
+            Nos envie um email que retornaremos em breve:
           </Typography>
-          <Box
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: 2,
-              mb: 3,
-            }}
+          <form
+            ref={form}
+            onSubmit={handleSendEmail}
+            style={{ width: '100%', maxWidth: 400 }}
           >
-            <EmailIcon
+            <Box
               sx={{
-                color: '#fff',
-                fontSize: { xs: '20px', sm: '24px', md: '28px' },
-              }}
-            />
-            <Typography
-              variant="body1"
-              component="p"
-              sx={{
-                fontSize: { xs: '12px', sm: '16px', md: '20px' },
-                color: 'white',
-                textAlign: 'center',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 2,
+                alignItems: 'center',
+                mb: 4,
+                mt: 2,
               }}
             >
-              altplano@hotmail.com
-            </Typography>
-          </Box>
-          <Box
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: 2,
-              mb: 3,
-            }}
-          >
-            <WhatsAppIcon
-              sx={{
-                color: '#25D366',
-                fontSize: { xs: '20px', sm: '24px', md: '28px' },
-              }}
-            />
-            <Typography
-              variant="body1"
-              component="p"
-              sx={{
-                fontSize: { xs: '12px', sm: '16px', md: '20px' },
-                color: 'white',
-                textAlign: 'center',
-              }}
-            >
-              (67) 999999666
-            </Typography>
-          </Box>
-          <Box
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: 2,
-              mb: 3,
-            }}
-          >
-            <InstagramIcon
-              sx={{
-                color: '#E1306C',
-                fontSize: { xs: '20px', sm: '24px', md: '28px' },
-              }}
-            />
-            <Typography
-              variant="body1"
-              component="p"
-              sx={{
-                fontSize: { xs: '12px', sm: '16px', md: '20px' },
-                color: 'white',
-                textAlign: 'center',
-              }}
-            >
-              Em breve
-            </Typography>
-          </Box>
+              <TextField
+                name="name"
+                label="Nome"
+                required
+                variant="outlined"
+                fullWidth
+                sx={{
+                  maxWidth: 400,
+                  backgroundColor: 'rgba(255,255,255,0.05)',
+                  input: { color: 'white' },
+                  '& label': { color: '#a64dff' },
+                  '& label.Mui-focused': { color: '#a64dff' },
+                  '& .MuiOutlinedInput-root': {
+                    '& fieldset': { borderColor: '#842bc3' },
+                    '&:hover fieldset': { borderColor: '#a64dff' },
+                    '&.Mui-focused fieldset': { borderColor: '#a64dff' },
+                  },
+                }}
+              />
+              <TextField
+                name="email"
+                label="Email"
+                type="email"
+                required
+                variant="outlined"
+                fullWidth
+                sx={{
+                  maxWidth: 400,
+                  backgroundColor: 'rgba(255,255,255,0.05)',
+                  input: { color: 'white' },
+                  '& label': { color: '#a64dff' },
+                  '& label.Mui-focused': { color: '#a64dff' },
+                  '& .MuiOutlinedInput-root': {
+                    '& fieldset': { borderColor: '#842bc3' },
+                    '&:hover fieldset': { borderColor: '#a64dff' },
+                    '&.Mui-focused fieldset': { borderColor: '#a64dff' },
+                  },
+                }}
+              />
+              <TextField
+                name="phone"
+                label="WhatsApp"
+                variant="outlined"
+                fullWidth
+                sx={{
+                  maxWidth: 400,
+                  backgroundColor: 'rgba(255,255,255,0.05)',
+                  input: { color: 'white' },
+                  '& label': { color: '#a64dff' },
+                  '& label.Mui-focused': { color: '#a64dff' },
+                  '& .MuiOutlinedInput-root': {
+                    '& fieldset': { borderColor: '#842bc3' },
+                    '&:hover fieldset': { borderColor: '#a64dff' },
+                    '&.Mui-focused fieldset': { borderColor: '#a64dff' },
+                  },
+                }}
+              />
+              <TextField
+                name="message"
+                label="Mensagem"
+                required
+                variant="outlined"
+                fullWidth
+                multiline
+                minRows={4}
+                sx={{
+                  maxWidth: 400,
+                  backgroundColor: 'rgba(255,255,255,0.05)',
+                  input: { color: 'white' },
+                  textarea: { color: 'white' },
+                  '& label': { color: '#a64dff' },
+                  '& label.Mui-focused': { color: '#a64dff' },
+                  '& .MuiOutlinedInput-root': {
+                    '& fieldset': { borderColor: '#842bc3' },
+                    '&:hover fieldset': { borderColor: '#a64dff' },
+                    '&.Mui-focused fieldset': { borderColor: '#a64dff' },
+                  },
+                }}
+              />
+              <Button
+                type="submit"
+                variant="contained"
+                sx={{
+                  mt: 1,
+                  backgroundColor: '#842bc3',
+                  color: 'white',
+                  fontWeight: 'bold',
+                  '&:hover': {
+                    backgroundColor: '#a64dff',
+                  },
+                  maxWidth: 400,
+                  width: '100%',
+                  '&.Mui-disabled': {
+                    backgroundColor: '#a1a1a1',
+                    color: '#fff',
+                  },
+                }}
+                disabled={loading}
+              >
+                {loading ? (
+                  <CircularProgress size={24} sx={{ color: '#a64dff' }} />
+                ) : (
+                  'Enviar'
+                )}
+              </Button>
+              {success && (
+                <Typography sx={{ color: 'green', mt: 1 }}>
+                  Mensagem enviada com sucesso!
+                </Typography>
+              )}
+              {error && (
+                <Typography sx={{ color: 'red', mt: 1 }}>
+                  Erro ao enviar. Tente novamente.
+                </Typography>
+              )}
+            </Box>
+          </form>
         </Box>
       </Box>
-      <FooterContact />
+      <FooterB />
     </Box>
   );
 }

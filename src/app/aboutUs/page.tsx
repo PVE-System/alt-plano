@@ -9,7 +9,7 @@ import LogoAltPlanoEffect from '@/components/LogoAltPlanoEffect/LogoAltPlanoEffe
 import SpeakerIcon from '@mui/icons-material/Speaker';
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
 import EqualizerIcon from '@mui/icons-material/Equalizer';
-import FooterAboutUs from '../FooterAboutUs/FooterAboutUs';
+import FooterB from '@/components/FooterB/FooterB';
 
 export default function AboutUs() {
   return (
@@ -66,7 +66,7 @@ export default function AboutUs() {
             variant="h1"
             component="h1"
             sx={{
-              fontSize: { xs: '16px', sm: '30px', md: '40px' },
+              fontSize: { xs: '16px', sm: '30px', md: '36px' },
               fontWeight: 'bold',
               lineHeight: 1.2,
               mb: 2,
@@ -81,7 +81,7 @@ export default function AboutUs() {
             component="p"
             sx={{
               fontFamily: 'Agency FB Cyrillic', //Font AltPlano
-              fontSize: { xs: '12px', sm: '16px', md: '20px' },
+              fontSize: { xs: '14px', sm: '16px', md: '24px' },
               width: { xs: '300px', sm: '600px', md: '900px' },
               color: 'white',
               textAlign: 'center',
@@ -99,16 +99,17 @@ export default function AboutUs() {
             component="p"
             sx={{
               fontFamily: 'Agency FB Cyrillic', //Font AltPlano
-              fontSize: { xs: '12px', sm: '16px', md: '20px' },
+              fontSize: { xs: '14px', sm: '16px', md: '24px' },
               width: { xs: '300px', sm: '600px', md: '900px' },
               color: 'white',
               textAlign: 'center',
             }}
           >
-            Nosso desejo também é assessorar outros produtores na curadoria
-            artística de seus projetos. Além disso, temos como objetivo
-            contribuir com produções musicais autorais nas mais variadas formas.
-            Essa é a ALTPLANO, nosso plano alternativo.
+            Nosso desejo também é colaborar com outros produtores nas curadorias
+            artísticas e técnicas de seus projetos.
+            <br /> Além disso, temos como objetivo contribuir com produções
+            musicais autorais nas mais variadas formas. Essa é a ALTPLANO, nosso
+            plano alternativo.
           </Typography>
           <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
             <SpeakerIcon
@@ -204,7 +205,7 @@ export default function AboutUs() {
           </Box>
         </Box>
       </Box>
-      <FooterAboutUs />
+      <FooterB />
     </Box>
   );
 }

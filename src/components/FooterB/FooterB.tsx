@@ -43,22 +43,6 @@ export default function Footer() {
           >
             Contato
           </Typography>
-          {/*           <IconButton
-            component="a"
-            href="https://www.instagram.com/altplano"
-            target="_blank"
-            rel="noopener noreferrer"
-            sx={{
-              color: '#842bc3ff',
-              '&:hover': {
-                color: '#a64dff',
-                transform: 'scale(1.1)',
-                transition: 'all 0.3s ease-in-out',
-              },
-            }}
-          >
-            <InstagramIcon sx={{ fontSize: 28 }} />
-          </IconButton> */}
         </Box>
       </Box>
     </Box>

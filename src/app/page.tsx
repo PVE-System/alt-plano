@@ -27,7 +27,6 @@ export default function Home() {
       'Rave',
       'Hip Hop',
       'House',
-      'UK Garage',
       'Dance Music',
       'Sound System',
       "Drum 'n' bass",
@@ -66,9 +65,7 @@ export default function Home() {
       >
         <Box
           sx={{
-            /* width: 'fit-content', */
             maxWidth: '90%',
-            /*   overflow: 'hidden', */
             mb: 4,
           }}
         >
@@ -139,7 +136,7 @@ export default function Home() {
             variant="h1"
             component="h1"
             sx={{
-              fontSize: { xs: '20px', sm: '40px', md: '50px' },
+              fontSize: { xs: '23px', sm: '40px', md: '50px' },
               fontWeight: 'bold',
               lineHeight: 1.2,
               mb: 2,
@@ -153,7 +150,7 @@ export default function Home() {
             variant="body1"
             component="p"
             sx={{
-              fontSize: { xs: '12px', sm: '18px', md: '22px' },
+              fontSize: { xs: '15px', sm: '18px', md: '22px' },
 
               color: 'white',
               textAlign: 'center',
