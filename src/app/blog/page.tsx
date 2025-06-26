@@ -1,3 +1,5 @@
+export const revalidate = 30;
+
 import BlogFilterClient from '@/components/BlogFilterClient/BlogFilterClient';
 import MenuNav from '@/components/MenuNav/MenuNav';
 import { getBlogPosts, getPageContent } from '@/lib/notion';
