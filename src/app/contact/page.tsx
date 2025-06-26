@@ -106,7 +106,7 @@ export default function Contact() {
               textAlign: 'center',
             }}
           >
-            Nos envie um email que retornaremos em breve:
+            Nos envie uma mensagem que retornaremos em breve:
           </Typography>
           <form
             ref={form}

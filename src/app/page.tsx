@@ -24,12 +24,12 @@ export default function Home() {
   const words = React.useMemo(
     () => [
       'Techno',
-      'Rave',
+      "Drum 'n' bass",
       'Hip Hop',
       'House',
       'Dance Music',
       'Sound System',
-      "Drum 'n' bass",
+      'Rave',
       'Hardcore',
       'Punk',
       'Skate',
@@ -59,7 +59,7 @@ export default function Home() {
           alignItems: 'center',
           background: {
             xs: 'linear-gradient(to bottom, #181818, #242424, #2b2b2b)',
-            md: 'linear-gradient(to right, #181818, #2b2b2b 40%, #2b2b2b 60%, #4a4a4a)',
+            md: 'linear-gradient(to right, #181818, #2b2b2b 45%, #2b2b2b 60%, #3b3b3b)',
           },
         }}
       >

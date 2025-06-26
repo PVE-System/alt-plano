@@ -16,7 +16,7 @@ Seu objetivo é apresentar a identidade da empresa com **design moderno** e com 
 - ⚛️ [**Next.js 14**] — framework React moderno
 - 🎨 [**Material UI (MUI)**] — componentes estilizados e acessíveis
 - ✉️ [**EmailJS**] — envio de emails via front-end (Free Tier)
-- ☁️ [**Vercel**] — hospedagem com CI/CD integrado
+- ☁️ [**Vercel**] — hospedagem
 
 ---
 
@@ -25,6 +25,7 @@ Seu objetivo é apresentar a identidade da empresa com **design moderno** e com 
 Na seção **"Contato"**, visitantes podem preencher um formulário que envia diretamente um e-mail para a produtora, sem a necessidade de back-end.
 
 ✔️ Feito com `EmailJS`
+
 ✔️ Funcional no plano **free tier**
 
 ---

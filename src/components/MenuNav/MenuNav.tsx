@@ -11,13 +11,14 @@ export default function MenuNav() {
         mt: 3,
         mb: 3,
         backgroundColor: '#262626ff',
-        /* backgroundColor: '#842bc3ff', */
+        border: '1px solid rgba(0, 0, 0, 0.3)',
+        boxShadow: '0px 0px 24px 12px rgba(0, 0, 0, 0.3)',
         borderRadius: '24px',
         color: 'white',
         transition: 'all 0.3s ease-in-out',
         '&:hover': {
           transform: 'translateY(-2px)',
-          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)',
+          boxShadow: '4px 4px 36px 2px rgba(0, 0, 0, 0.7)',
           transition: 'all 0.3s ease-in-out',
         },
       }}

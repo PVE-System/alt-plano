@@ -66,7 +66,7 @@ export default function AboutUs() {
             variant="h1"
             component="h1"
             sx={{
-              fontSize: { xs: '16px', sm: '30px', md: '36px' },
+              fontSize: { xs: '22px', sm: '30px', md: '36px' },
               fontWeight: 'bold',
               lineHeight: 1.2,
               mb: 2,
@@ -81,7 +81,7 @@ export default function AboutUs() {
             component="p"
             sx={{
               fontFamily: 'Agency FB Cyrillic', //Font AltPlano
-              fontSize: { xs: '14px', sm: '16px', md: '24px' },
+              fontSize: { xs: '18px', sm: '20px', md: '26px' },
               width: { xs: '300px', sm: '600px', md: '900px' },
               color: 'white',
               textAlign: 'center',
@@ -99,17 +99,16 @@ export default function AboutUs() {
             component="p"
             sx={{
               fontFamily: 'Agency FB Cyrillic', //Font AltPlano
-              fontSize: { xs: '14px', sm: '16px', md: '24px' },
+              fontSize: { xs: '18px', sm: '20px', md: '26px' },
               width: { xs: '300px', sm: '600px', md: '900px' },
               color: 'white',
               textAlign: 'center',
             }}
           >
             Nosso desejo também é colaborar com outros produtores nas curadorias
-            artísticas e técnicas de seus projetos.
-            <br /> Além disso, temos como objetivo contribuir com produções
-            musicais autorais nas mais variadas formas. Essa é a ALTPLANO, nosso
-            plano alternativo.
+            artísticas e técnicas de seus projetos. Além disso, temos como
+            objetivo contribuir com produções musicais autorais nas mais
+            variadas formas. Essa é a ALTPLANO, nosso plano alternativo.
           </Typography>
           <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
             <SpeakerIcon
