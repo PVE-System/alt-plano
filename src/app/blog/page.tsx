@@ -1,6 +1,7 @@
 export const revalidate = 30;
 
 import BlogFilterClient from '@/components/BlogFilterClient/BlogFilterClient';
+import FooterB from '@/components/FooterB/FooterB';
 import MenuNav from '@/components/MenuNav/MenuNav';
 import { getBlogPosts, getPageContent } from '@/lib/notion';
 import { Box, Typography } from '@mui/material';
@@ -93,7 +94,11 @@ export default async function BlogPage() {
             alignItems: 'center',
             justifyContent: 'center',
             minHeight: '100vh',
-            width: '100%',
+            /* width: '100%', */
+            /* width: '800px', */
+            /*   backgroundColor: 'rgba(0, 0, 0, 0.3)',
+            backdropFilter: 'blur(4px)', */
+            borderRadius: '12px',
           }}
         >
           <Typography
@@ -115,6 +120,7 @@ export default async function BlogPage() {
           <BlogFilterClient posts={fullPosts} />
         </Box>
       </Box>
+      <FooterB />
     </Box>
   );
 }

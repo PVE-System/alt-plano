@@ -16,8 +16,10 @@ export default function MenuNav() {
         borderRadius: '24px',
         color: 'white',
         transition: 'all 0.3s ease-in-out',
+        willChange: 'transform',
         '&:hover': {
-          transform: 'translateY(-2px)',
+          transform: 'translateY(-3px) scale(1.01)',
+          /* transform: 'scale(1.02)', */
           boxShadow: '4px 4px 36px 2px rgba(0, 0, 0, 0.7)',
           transition: 'all 0.3s ease-in-out',
         },

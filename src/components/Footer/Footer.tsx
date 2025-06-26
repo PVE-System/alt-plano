@@ -14,6 +14,7 @@ export default function Footer() {
           md: 'linear-gradient(to right, #181818, #2b2b2b 45%, #2b2b2b 60%,  #3b3b3b)',
         },
         color: 'white',
+        py: 1,
       }}
     >
       <Divider sx={{ height: 1, backgroundColor: '#4a4a4a' }} />

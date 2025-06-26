@@ -116,14 +116,20 @@ export default function BlogFilterClient({ posts }: { posts: Post[] }) {
         <Box
           key={post.id}
           sx={{
-            width: { xs: '100%', sm: '90%', md: '700px' },
-            mt: 4,
-            borderBottom: '1px solid #444',
-            pb: 3,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             textAlign: 'center',
+
+            width: { xs: '300px', sm: '500px', md: '700px' },
+            m: 4,
+            p: 4,
+            /* borderBottom: '1px solid #444', */
+
+            backgroundColor: 'rgba(0, 0, 0, 0.3)',
+            backdropFilter: 'blur(4px)',
+            borderRadius: '12px',
+            boxShadow: '0 0px 25px rgba(5, 4, 4, 0.2)',
           }}
         >
           {post.capa && (
@@ -179,22 +185,17 @@ export default function BlogFilterClient({ posts }: { posts: Post[] }) {
 
           <Box
             sx={{
-              width: { xs: '320px', sm: '100%', md: '100%' },
+              width: { xs: '300px', sm: '500px', md: '700px' },
+              mt: 2,
+              p: 2,
               overflowWrap: 'break-word',
+              whiteSpace: 'pre-line',
+              fontSize: { xs: '14px', sm: '16px', md: '18px' },
+              wordBreak: 'break-word',
+              textAlign: 'center',
             }}
           >
-            <Typography
-              variant="body2"
-              color="white"
-              sx={{
-                mt: 2,
-                whiteSpace: 'pre-line',
-                fontSize: { xs: '14px', sm: '16px', md: '18px' },
-                wordBreak: 'break-word',
-              }}
-            >
-              {post.texto}
-            </Typography>
+            <Typography color="white">{post.texto}</Typography>
           </Box>
         </Box>
       ))}
