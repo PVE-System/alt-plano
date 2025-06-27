@@ -28,6 +28,11 @@ export default async function BlogPage() {
             ? post.properties['Titulo'].title[0]?.plain_text
             : 'Sem título';
 
+        const redator =
+          post.properties['Redator']?.type === 'rich_text'
+            ? post.properties['Redator'].rich_text[0]?.plain_text || ''
+            : '';
+
         const data =
           post.properties['Data']?.type === 'date'
             ? post.properties['Data'].date?.start || ''
@@ -60,6 +65,7 @@ export default async function BlogPage() {
           data,
           capa,
           texto,
+          redator,
         };
       }),
   );

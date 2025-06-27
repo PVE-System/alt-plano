@@ -11,6 +11,7 @@ type Post = {
   categorias: string[];
   capa?: string;
   texto: string;
+  redator: string;
 };
 
 export default function BlogFilterClient({ posts }: { posts: Post[] }) {
@@ -25,9 +26,26 @@ export default function BlogFilterClient({ posts }: { posts: Post[] }) {
     new Date().getFullYear(),
   );
 
-  const postsFiltrados = posts.filter(
-    (post) => new Date(post.data).getFullYear() === anoSelecionado,
-  );
+  const [categoriaSelecionada, setCategoriaSelecionada] = useState('Todas');
+
+  // Categorias disponíveis com base no ano selecionado
+  const categoriasDisponiveis = useMemo(() => {
+    const categorias = posts
+      .filter((p) => new Date(p.data).getFullYear() === anoSelecionado)
+      .flatMap((p) => p.categorias);
+
+    return ['Todas', ...Array.from(new Set(categorias))];
+  }, [posts, anoSelecionado]);
+
+  // Filtrar posts por ano e categoria
+  const postsFiltrados = posts.filter((post) => {
+    const ano = new Date(post.data).getFullYear();
+    const correspondeAoAno = ano === anoSelecionado;
+    const correspondeCategoria =
+      categoriaSelecionada === 'Todas' ||
+      post.categorias.includes(categoriaSelecionada);
+    return correspondeAoAno && correspondeCategoria;
+  });
 
   return (
     <Box
@@ -38,79 +56,80 @@ export default function BlogFilterClient({ posts }: { posts: Post[] }) {
         alignItems: 'center',
       }}
     >
-      <Select
-        value={anoSelecionado}
-        onChange={(e) => setAnoSelecionado(Number(e.target.value))}
-        sx={{
-          mb: 4,
-          color: 'white',
-          backgroundColor: '#262626ff',
-          borderRadius: 2,
-          border: '2px solid #842bc3',
-          width: '150px',
-          fontWeight: 'bold',
-          '& .MuiSelect-icon': {
-            color: 'white',
-          },
-          '& fieldset': {
-            border: 'none',
-          },
-        }}
-        MenuProps={{
-          disableScrollLock: true,
-          /* disablePortal: true, */
-          PaperProps: {
-            sx: {
-              backgroundColor: '#222',
-              color: '#fff',
-              mt: 1,
-              borderRadius: 2,
-            },
-          },
-        }}
-      >
-        {anosDisponiveis.map((ano) => (
-          <MenuItem key={ano} value={ano}>
-            {ano}
-          </MenuItem>
-        ))}
-      </Select>
-
-      {/*       <Select
-        native
-        value={anoSelecionado}
-        onChange={(e) => setAnoSelecionado(Number(e.target.value))}
-        sx={{
-          mb: 4,
-          color: 'white',
-          backgroundColor: '#262626ff',
-          borderRadius: 2,
-          border: '2px solid #842bc3',
-          width: '150px',
-          fontWeight: 'bold',
-          '&:focus': {
-            outline: '2px solid #a64dff',
-            backgroundColor: '#222',
-          },
-        }}
-        inputProps={{
-          style: {
+      <Box sx={{ display: 'flex', gap: 1 }}>
+        {/* 🔽 Filtro por ano */}
+        <Select
+          value={anoSelecionado}
+          onChange={(e) => {
+            setAnoSelecionado(Number(e.target.value));
+            setCategoriaSelecionada('Todas'); // Reseta categoria quando muda ano
+          }}
+          sx={{
+            mb: 2,
             color: 'white',
             backgroundColor: '#262626ff',
-            borderRadius: 8,
-          },
-        }}
-      >
-        {anosDisponiveis.map((ano) => (
-          <option
-            key={ano}
-            value={ano}
-            style={{ background: '#222', color: '#fff' }}
-          >
-            {ano}
-          </option>
-        ))}
-      </Select> */}
+            borderRadius: 2,
+            border: '2px solid #842bc3',
+            width: '150px',
+            height: '60px',
+            fontWeight: 'bold',
+            '& .MuiSelect-icon': { color: 'white' },
+            '& fieldset': { border: 'none' },
+          }}
+          MenuProps={{
+            disableScrollLock: true,
+            PaperProps: {
+              sx: {
+                backgroundColor: '#222',
+                color: '#fff',
+                mt: 1,
+                borderRadius: 2,
+              },
+            },
+          }}
+        >
+          {anosDisponiveis.map((ano) => (
+            <MenuItem key={ano} value={ano}>
+              {ano}
+            </MenuItem>
+          ))}
+        </Select>
+
+        {/* 🔽 Filtro por categoria */}
+        <Select
+          value={categoriaSelecionada}
+          onChange={(e) => setCategoriaSelecionada(e.target.value)}
+          sx={{
+            mb: 4,
+            color: 'white',
+            backgroundColor: '#262626ff',
+            borderRadius: 2,
+            border: '2px solid #842bc3',
+            width: '150px',
+            height: '60px',
+            fontWeight: 'bold',
+            '& .MuiSelect-icon': { color: 'white' },
+            '& fieldset': { border: 'none' },
+          }}
+          MenuProps={{
+            disableScrollLock: true,
+            PaperProps: {
+              sx: {
+                backgroundColor: '#222',
+                color: '#fff',
+                mt: 1,
+                borderRadius: 2,
+              },
+            },
+          }}
+        >
+          {categoriasDisponiveis.map((cat) => (
+            <MenuItem key={cat} value={cat}>
+              {cat}
+            </MenuItem>
+          ))}
+        </Select>
+      </Box>
 
       {postsFiltrados.map((post) => (
         <Box
@@ -121,7 +140,7 @@ export default function BlogFilterClient({ posts }: { posts: Post[] }) {
             alignItems: 'center',
             textAlign: 'center',
 
-            width: { xs: '300px', sm: '500px', md: '700px' },
+            width: { xs: '320px', sm: '500px', md: '700px' },
             m: 4,
             p: 4,
             /* borderBottom: '1px solid #444', */
@@ -167,6 +186,14 @@ export default function BlogFilterClient({ posts }: { posts: Post[] }) {
 
           <Typography variant="h5" color="white">
             {post.titulo}
+          </Typography>
+
+          <Typography
+            variant="subtitle2"
+            color="gray"
+            sx={{ fontStyle: 'italic', mt: 0.5 }}
+          >
+            Publicado por {post.redator}
           </Typography>
 
           {post.categorias.length > 0 && (
