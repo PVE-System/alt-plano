@@ -14,7 +14,7 @@ export default function LogoAltPlanoEffect() {
     >
       <Box
         component="img"
-        src="/images/AltPlano_logomarca2.svg"
+        src="/images/AltPlano_logomarca4.svg"
         alt="Alt Plano Logo"
         sx={{
           width: { xs: '200px', sm: '200px', md: '280px' },
