@@ -4,8 +4,8 @@ export default function LogoAltPlanoEffect() {
   return (
     <Box
       sx={{
-        width: { xs: '280px', sm: '300px', md: '350px' },
-        height: { xs: '280px', sm: '300px', md: '350px' },
+        width: { xs: '350px', sm: '300px', md: '350px' },
+        height: { xs: '350px', sm: '300px', md: '350px' },
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
