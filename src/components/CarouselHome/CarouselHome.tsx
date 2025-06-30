@@ -46,9 +46,11 @@ export default function CarouselHome() {
   return (
     <Box
       sx={{
-        width: '100%',
+        /* width: '100%', */
         p: 2,
-        maxWidth: { xs: '100vw', sm: '100%' },
+        maxWidth: '100vw',
+        /* maxWidth: { xs: '100vw', sm: '100%' }, */
+        /* maxWidth: { xs: '100vw', sm: '100vw', md: '100vw' }, */
         /*  boxSizing: 'border-box', */
         '& .swiper': {
           borderRadius: '20px',
