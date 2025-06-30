@@ -62,7 +62,7 @@ export default function BlogFilterClient({ posts }: { posts: Post[] }) {
           value={anoSelecionado}
           onChange={(e) => {
             setAnoSelecionado(Number(e.target.value));
-            setCategoriaSelecionada('Todas'); // Reseta categoria quando muda ano
+            setCategoriaSelecionada('Todas'); // Reset categoria quando muda ano
           }}
           sx={{
             mb: 2,

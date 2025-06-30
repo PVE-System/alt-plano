@@ -11,16 +11,17 @@ Seu objetivo é apresentar a identidade da empresa com **design moderno** e com 
 
 ---
 
-## 🧱 Tecnologias Utilizadas
+## 💻 Tecnologias Utilizadas
 
-- ⚛️ [**Next.js 14**] — framework React moderno
-- 🎨 [**Material UI (MUI)**] — componentes estilizados e acessíveis
+- ⚛️ [**Next.js 14**] — framework React
+- 🎨 [**Material UI (MUI)**] — biblioteca de componentes React
 - ✉️ [**EmailJS**] — envio de emails via front-end (Free Tier)
 - ☁️ [**Vercel**] — hospedagem
+- ✍️ [**Notion**] - blog integrado
 
 ---
 
-## 📬 Funcionalidade: Contato
+## 📬 Funcionalidade: Contato por email
 
 Na seção **"Contato"**, visitantes podem preencher um formulário que envia diretamente um e-mail para a produtora, sem a necessidade de back-end.
 

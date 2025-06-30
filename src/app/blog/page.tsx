@@ -100,10 +100,6 @@ export default async function BlogPage() {
             alignItems: 'center',
             justifyContent: 'center',
             minHeight: '100vh',
-            /* width: '100%', */
-            /* width: '800px', */
-            /*   backgroundColor: 'rgba(0, 0, 0, 0.3)',
-            backdropFilter: 'blur(4px)', */
             borderRadius: '12px',
           }}
         >

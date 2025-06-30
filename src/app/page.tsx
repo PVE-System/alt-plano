@@ -83,7 +83,7 @@ export default function Home() {
         >
           <Box
             component="img"
-            src="/images/AltPlano_espiral_bg_black_site.png"
+            src="/images/AltPlano_espiral_ok.svg"
             alt="Alt Plano Logo"
             sx={{
               width: { xs: '250px', sm: '250px', md: '350px' },

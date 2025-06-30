@@ -27,10 +27,10 @@ export default function Contact() {
 
     emailjs
       .sendForm(
-        'service_c47a0x5', // Substitua pelo seu service ID
-        'template_pmwllgw', // Substitua pelo seu template ID
+        'service_c47a0x5',
+        'template_pmwllgw',
         form.current,
-        '0azq8lZpwFdvj5ITV', // Substitua pelo seu public key
+        '0azq8lZpwFdvj5ITV',
       )
       .then(() => {
         setLoading(false);
