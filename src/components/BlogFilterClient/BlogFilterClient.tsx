@@ -207,7 +207,15 @@ export default function BlogFilterClient({ posts }: { posts: Post[] }) {
           )}
 
           <Typography variant="body2" color="gray">
-            {new Date(post.data).toLocaleDateString('pt-BR')}
+            {(() => {
+              const [ano, mes, dia] = post.data.split('-');
+              const dataCorrigida = new Date(
+                Number(ano),
+                Number(mes) - 1,
+                Number(dia),
+              );
+              return dataCorrigida.toLocaleDateString('pt-BR');
+            })()}
           </Typography>
 
           <Box
