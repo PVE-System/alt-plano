@@ -25,6 +25,7 @@ export default function Home() {
     () => [
       'Techno',
       "Drum 'n' bass",
+      'Trance',
       'Hip Hop',
       'House',
       'Dance Music',

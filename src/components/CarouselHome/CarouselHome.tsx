@@ -9,27 +9,29 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
+import { useRouter } from 'next/navigation';
 
 const carouselItems = [
   {
-    image: '/images/eletronica_event.png',
-    label: 'Eventos e Festas Eletrônica',
-    description: 'Produção e organização de eventos de música eletrônica',
+    image: '/images/img_carousel_1.jpg',
+    label: 'CONFIRA',
+    /* description: 'Produção e organização de eventos de música eletrônica', */
   },
   {
-    image: '/images/eletronica_studio.png',
-    label: 'Eventos Particulares',
-    description: 'Eventos personalizados para ocasiões especiais',
+    image: '/images/img_carousel_2.jpg',
+    label: 'NOSSO',
+    /* description: 'Eventos personalizados para ocasiões especiais', */
   },
   {
-    image: '/images/punkGrunge.png',
-    label: 'Discotecagem',
-    description: 'Música alternativa para todos os gostos',
+    image: '/images/img_carousel_3.jpg',
+    label: 'BLOG',
+    /* description: 'Música alternativa para todos os gostos', */
   },
 ];
 
 export default function CarouselHome() {
   const swiperRef = useRef<SwiperType | null>(null);
+  const router = useRouter();
 
   const handleMouseEnter = () => {
     if (swiperRef.current) {
@@ -99,6 +101,7 @@ export default function CarouselHome() {
             <Box
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
+              onClick={() => router.push('/blog')}
               sx={{
                 height: { xs: '230px', sm: '300px', md: '330px' },
                 backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url(${item.image})`,
@@ -110,14 +113,12 @@ export default function CarouselHome() {
                 alignItems: 'center',
                 justifyContent: 'flex-end',
                 pb: 6,
-                cursor: 'default',
-                /* minWidth: 0, */
+                cursor: 'pointer',
                 width: '100%',
-                /*  boxSizing: 'border-box', */
               }}
             >
               <Box
-                sx={{
+              /* sx={{
                   backgroundColor: 'rgba(0, 0, 0, 0.3)',
                   backdropFilter: 'blur(4px)',
                   borderRadius: '12px',
@@ -133,22 +134,23 @@ export default function CarouselHome() {
                     transform: 'translateY(0)',
                     backgroundColor: 'rgba(0, 0, 0, 0.8)',
                   },
-                }}
+                }} */
               >
                 <Typography
                   variant="h4"
                   sx={{
                     color: 'white',
-                    fontWeight: 'bold',
                     textAlign: 'center',
                     fontSize: { xs: '18px', sm: '26px', md: '30px' },
                     mb: 1,
-                    fontFamily: 'var(--font-electrolize)',
+                    fontFamily: 'Agency FB Cyrillic', //Font AltPlano
+                    /* fontFamily: 'var(--font-electrolize)', */
+                    /* fontWeight: 'bold', */
                   }}
                 >
                   {item.label}
                 </Typography>
-                <Typography
+                {/*                 <Typography
                   variant="body1"
                   sx={{
                     color: 'rgba(255, 255, 255, 0.9)',
@@ -157,7 +159,7 @@ export default function CarouselHome() {
                   }}
                 >
                   {item.description}
-                </Typography>
+                </Typography> */}
               </Box>
             </Box>
           </SwiperSlide>
