@@ -80,10 +80,10 @@ export default function EspiralPage() {
                 animation: 'rotate 5s linear infinite',
                 filter: 'drop-shadow(0 0 10px rgba(0, 0, 0, 0.9))',
                 '@keyframes rotate': {
-                  '0%': {
+                  '100%': {
                     transform: 'rotate(0deg)',
                   },
-                  '100%': {
+                  '0%': {
                     transform: 'rotate(360deg)',
                   },
                 },
