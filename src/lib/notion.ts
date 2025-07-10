@@ -6,9 +6,27 @@ const notion = new Client({
   auth: process.env.NOTION_TOKEN,
 });
 
-export async function getBlogPosts() {
+export async function getBlogPosts(ano?: number) {
+  const filters = [];
+
+  if (ano) {
+    filters.push({
+      property: 'Data',
+      date: {
+        on_or_after: `${ano}-01-01`,
+      },
+    });
+    filters.push({
+      property: 'Data',
+      date: {
+        on_or_before: `${ano}-12-31`,
+      },
+    });
+  }
+
   const response = await notion.databases.query({
     database_id: process.env.NOTION_DATABASE_ID!,
+    filter: filters.length ? { and: filters } : undefined, // se não tem ano, não aplica filtro
     sorts: [
       {
         property: 'Data',
