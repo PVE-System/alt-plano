@@ -1,4 +1,5 @@
-export const revalidate = 30;
+/* export const revalidate = 30; */
+export const dynamic = 'force-dynamic';
 
 import BlogFilterClient from '@/components/BlogFilterClient/BlogFilterClient';
 import FooterB from '@/components/FooterB/FooterB';

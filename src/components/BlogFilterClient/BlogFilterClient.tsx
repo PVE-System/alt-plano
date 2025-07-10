@@ -131,7 +131,7 @@ export default function BlogFilterClient({ posts }: { posts: Post[] }) {
         </Select>
       </Box>
 
-      {postsFiltrados.map((post) => (
+      {postsFiltrados.map((post, index) => (
         <Box
           key={post.id}
           sx={{
@@ -176,7 +176,7 @@ export default function BlogFilterClient({ posts }: { posts: Post[] }) {
                   src={post.capa}
                   alt={post.titulo}
                   fill
-                  priority
+                  priority={index === 0} // ✅ Preload só para o primeiro post
                   sizes="(max-width: 600px) 100vw, (max-width: 900px) 100vw, 100vw"
                   style={{ borderRadius: '12px', objectFit: 'contain' }}
                 />
