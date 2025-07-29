@@ -265,7 +265,11 @@ export default function BlogFilterClient({
                 textAlign: 'center',
               }}
             >
-              <Typography color="white">{post.texto}</Typography>
+              {/* <Typography color="white">{post.texto}</Typography> */}
+              <Typography
+                color="white"
+                dangerouslySetInnerHTML={{ __html: post.texto }}
+              />
             </Box>
           </Box>
         ))
